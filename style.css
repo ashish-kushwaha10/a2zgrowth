@@ -9,7 +9,7 @@
   width: 100%;
   height: auto;
 }
-.line-h {
+.line-h { 
   line-height: 1.75;
 }
 .par-set p {
@@ -45,23 +45,63 @@ a {
   color: black;
   /* font-weight: 800; */
 }
-.top-info p {
-  color: black;
-  /* font-weight: 800; */
-  margin-bottom: 0;
-}
 
-
-/* General Styles */
-body {
+/* Social Media Icon Wrapper (Anchor Tags) */
+.top-info div p {
   margin: 0;
-  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Add spacing between icons */
 }
+
+.top-info div p a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Remove underline */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* General Icon Styling */
+.top-info div p a i {
+  font-size: 20px; /* Icon size */
+  color: #333; /* Default color for icons */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover Effects for Icons */
+.top-info div p a:hover i {
+  color: #0077b5; /* Default hover color */
+  transform: scale(1.2); /* Slight zoom-in effect */
+}
+
+/* Custom Hover Colors for Each Icon */
+.top-info div p a:nth-child(1):hover i {
+  color: #ff0000; /* YouTube red */
+}
+
+.top-info div p a:nth-child(2):hover i {
+  color: #0077b5; /* LinkedIn blue */
+}
+
+.top-info div p a:nth-child(3):hover i {
+  color: #4267B2; /* Facebook blue */
+}
+
+.top-info div p a:nth-child(4):hover i {
+  color: #1DA1F2; /* Twitter blue */
+}
+
+.top-info div p a:nth-child(5):hover i {
+  color: #ff5722; /* Location marker color */
+}
+
+
 
 .top-info {
   background-color: white;
   width: 100%;
-  padding: 15px 6vw;
+  padding: 15px 8vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1980,3 +2020,119 @@ black box
   }
 }
 /*991 media end */
+
+
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+.custom-button {
+  color: black;
+  flex-grow: 1;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none; /* Ensures no underline on the anchor text */
+}
+
+.custom-button:last-child {
+  margin-right: 0;
+}
+
+
+
+.yt-video iframe {
+  width: 100% !important;
+  height: 25rem !important;
+  /* 385px in rem (385 / 16) */
+}
+
+@media screen and (max-width: 767px) {
+  .yt-video iframe {
+      width: 100% !important;
+      height: 25rem !important;
+
+  }
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.metrics-section {
+    background-color: #ffffff; /* White background */
+}
+
+.metric-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #212529; /* Dark text color */
+}
+
+.metric-description {
+    font-size: 1rem;
+    color: #6c757d; /* Muted text */
+    margin-top: -10px;
+}
+
+.divider {
+    border-left: 1px solid #d3d3d3;
+    height: 50px;
+    margin: auto 1.5rem;
+    display: inline-block;
+}
+
+.additional-info {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.additional-info .dot {
+    color: #d3d3d3; /* Light grey dot */
+    margin: 0 0.5rem;
+}
+
+.metrics-section {
+  background-color: #ffffff;
+}
+
+.metric-content {
+  display: flex; /* Enables horizontal alignment */
+  align-items: center;
+}
+
+.metric-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #212529;
+  margin-right: 0.5rem; /* Adds spacing between the number and the description */
+}
+
+.metric-description {
+  font-size: 1rem;
+  color: #6c757d; /* Muted text */
+  text-align: left; /* Ensures text alignment is consistent */
+  margin: 0; /* Resets any default margins for proper alignment */
+}
+
+.additional-info {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.additional-info .dot {
+  color: #d3d3d3;
+  margin: 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .row.align-items-center > .col-md-3:not(:last-child) {
+      border-right: 1px solid #d3d3d3; /* Add vertical divider between columns */
+      padding-right: 1rem;
+  }
+}
