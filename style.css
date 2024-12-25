@@ -2065,7 +2065,6 @@ black box
   object-fit: contain; /* Ensures the entire thumbnail fits without cropping */
 }
 
-
 .metrics-section {
   background-color: #ffffff; /* White background */
 }
@@ -2096,19 +2095,7 @@ black box
 }
 
 .text-warning {
-  font-size: 1.5rem; /* Increase star font size */
-}
-
-/* Border between metrics */
-.row.align-items-center > .col-md-3:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 50px;
-  background-color: #d3d3d3;
+  font-size: 1.2rem; /* Increase star font size */
 }
 
 /* Additional Info Section */
@@ -2127,6 +2114,56 @@ black box
   font-size: 1.5rem; /* Increase the size for additional stars */
 }
 
+@media screen and (min-width: 1199px) {
+  /* Border between metrics */
+  .row.align-items-center > .col-md-3:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 50px;
+    background-color: #d3d3d3;
+  }
+}
+@media (max-width: 768px) {
+  .metrics-section {
+    padding: 1.5rem 1rem; /* Compact padding for smaller screens */
+  }
+
+  .metric-content {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+    margin-bottom: 1rem; /* Add spacing between metrics */
+    background: #f9f9f9; /* Light background for mobile */
+    border-radius: 12px; /* Rounded corners for mobile */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1.5rem; /* Padding inside the box */
+    width: 100%; /* Full width for mobile screens */
+  }
+
+  .metric-number {
+    font-size: 2.5rem; /* Adjusted size for better visibility */
+    margin-bottom: 0.5rem; /* Space between number and description */
+    font-weight: bold;
+    color: #212529;
+  }
+
+  .metric-description {
+    font-size: 1.1rem; /* Slightly larger for readability */
+    color: #6c757d;
+  }
+
+  .additional-info {
+    font-size: 0.9rem; /* Smaller text for mobile */
+    /* margin-top: 1.5rem; */
+  }
+
+  .star-rating i{
+    font-size: 0.8rem; /* Slightly smaller stars for compactness */
+  }
+}
 
 
 
@@ -2217,3 +2254,134 @@ black box
 color: rgb(241, 230, 8);
 }
 
+.training-zoom-effect {
+  display: inline-flex; /* Change d-flex to inline-flex to allow the content to wrap */
+  overflow: hidden; /* Prevent horizontal overflow */
+  transition: transform 0.3s ease;
+  max-width: 100%; /* Ensure it doesn't exceed container width */
+}
+
+.training-zoom-effect:hover {
+  transform: scale(1.1);
+}
+
+
+
+/* General Card Styling */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 4px solid black;
+}
+
+/* Card Body */
+.card-body {
+  text-align: left;
+  padding: 1.5rem;
+  background: #fff;
+}
+
+/* Course Stars Section */
+.course-stars {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.course-stars i {
+  color: #ffcc00; /* Yellow stars */
+  margin-right: 2px;
+}
+
+.course-stars span {
+  margin-left: 5px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Course Title */
+.card-body h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.8rem 0;
+}
+
+/* Course Details Section */
+.course-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.course-details div {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.course-details i {
+  font-size: 1rem;
+  color: #4154f1;
+}
+
+/* Enroll Now (Anchor Tag) Styling */
+.btn-custom {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #0066ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.8rem 0;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.2s ease;
+  text-decoration: none; /* Remove underline from anchor tag */
+}
+
+.btn-custom:hover {
+  background-color: #004cbf;
+  color: white;
+}
+.star-rating i{
+  font-size: 0.9rem; /* Slightly smaller stars for compactness */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card-img-top {
+      height: 180px;
+  }
+
+  .course-details {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+  }
+
+  .btn-custom {
+      font-size: 0.9rem;
+      padding: 0.7rem 0;
+  }
+}
